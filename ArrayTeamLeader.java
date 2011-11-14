@@ -1,9 +1,11 @@
+package SimpleTeamLeader;
+
 public class ArrayTeamLeader 
 {
     public static void main(String[] args) 
     {
         InputFile inPut = new InputFile("names.txt"); //construct input object
-        OutputFile outPut = new OutputFile("leaders.txt");//construct output object
+        OutputFile outPut = new OutputFile("TeamLeaderReport.txt");//construct output object
         
         String[] teamLeader = new String[100];//initialize new teamLeader array
         int[] memberCount = new int[100];//initialize new count array for amount on team
@@ -47,13 +49,14 @@ public class ArrayTeamLeader
                     outPut.writeEOL();
                 }
 
-                outPut.writeWord(teamLeader[index]);//write the teamLeaders name to file
                 outPut.writeInt(index);//write the team number
+                outPut.writeWord(teamLeader[index]);//write the teamLeaders name to file
                 outPut.writeInt(memberCount[index]);//write how many people on each team
                 
-                
+                //output to the screen for the user team number, name, and how many on team
                 System.out.println(index + " "+teamLeader[index]+" "
-                        +memberCount[index]);//output to the screen for the user
+                        +memberCount[index]);
+                
             }
             index=index+1;//increment x so we can get out of the loop
         }
